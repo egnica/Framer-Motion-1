@@ -2,9 +2,9 @@
 
 ## Let's take a look at the boxVariants Object
 
-```js
 Object defined:
 
+```js
 const boxVariants = {
   hidden: {
     opacity: 0,
@@ -22,27 +22,30 @@ const boxVariants = {
     transition: { type: "spring", stiffness: 300 },
   },
 };
+```
 
 div returned:
-      <motion.div
-        variants={boxVariants} // Attach variants
-        initial="hidden" // Start in the "hidden" state
-        animate="visible" // Animate to the "visible" state
-        whileHover="hover" // Apply "hover" state on hover
-        style={{
-          backgroundColor: "lightblue",
-          width: 150,
-          height: 150,
-          borderRadius: 20,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          fontSize: "18px",
-          fontWeight: "bold",
-        }}
-      >
-        Hover Me!
-      </motion.div>
+
+```js
+<motion.div
+  variants={boxVariants} // Attach variants
+  initial="hidden" // Start in the "hidden" state
+  animate="visible" // Animate to the "visible" state
+  whileHover="hover" // Apply "hover" state on hover
+  style={{
+    backgroundColor: "lightblue",
+    width: 150,
+    height: 150,
+    borderRadius: 20,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "18px",
+    fontWeight: "bold",
+  }}
+>
+  Hover Me!
+</motion.div>
 ```
 
 ### Does It Use Both transition states?
