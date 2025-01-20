@@ -161,9 +161,9 @@ Framer Motion allows you to add interactivity through gestures like drag, hover,
 
 ## AnimatePresence
 
-The AnimatePresence component enables animations when components are added to or removed from the DOM. It’s ideal for enter/exit animations for modals, notifications, and other dynamic UI elements.
+`The AnimatePresence` component is a powerful feature in Framer Motion that enables animations for components entering or leaving the DOM. It’s perfect for creating smooth enter/exit transitions for modals, notifications, dynamic lists, and other interactive UI elements.
 
-AnimatePresence is a wrapper component provided by Framer Motion. It enables animations for components as they are added to or removed from the DOM. Without it, Framer Motion can't animate components that are removed because they disappear from the DOM instantly.
+By wrapping conditionally rendered components with `AnimatePresence`, you ensure that animations are triggered even when components are removed from the DOM. Without AnimatePresence, Framer Motion cannot apply exit animations, as React immediately removes components without waiting for animations to complete.
 
 ### How Does It Work?
 
@@ -221,5 +221,8 @@ export default function App() {
 
 ### AnimatePresence:
 
+- The `exit` prop on a motion component is specifically triggered by `AnimatePresence`.
+  - The component remains in the DOM until the exit animation finishes.
+  - If `AnimatePresence` is not used, React immediately removes the component from the DOM, and the `exit` animation is never triggered.
 - Wraps components that should have enter/exit animations.
 - Ensures the animation plays even when the component is removed from the DOM.
