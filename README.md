@@ -244,11 +244,10 @@ export default function App() {
 
 ## Key Difference Between `layout` and `AnimatePresence`
 
-## | Feature | layout | AnimatePresence |
-
+| Feature                  |                     layout                     |                AnimatePresence                 |
 | :----------------------- | :--------------------------------------------: | :--------------------------------------------: |
-| Purpose | Animate changes in size or position. | Animate elements as they enter/exit the DOM. |
-| Works On | Elements already in the DOM. | Conditionally rendered elements. |
-| Handles Exit Animations? | False | True |
-| Usage | Resizing, repositioning, or layout shifts. | Animations for enter/exit states. |
-| Trigger | Layout/style changes (e.g., size or position). | Layout/style changes (e.g., size or position). |
+| Purpose                  |      Animate changes in size or position.      |  Animate elements as they enter/exit the DOM.  |
+| Works On                 |          Elements already in the DOM.          |        Conditionally rendered elements.        |
+| Handles Exit Animations? |                     False                      |                      True                      |
+| Usage                    |   Resizing, repositioning, or layout shifts.   |       Animations for enter/exit states.        |
+| Trigger                  | Layout/style changes (e.g., size or position). | Layout/style changes (e.g., size or position). |
