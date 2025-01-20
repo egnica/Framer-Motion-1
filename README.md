@@ -78,14 +78,14 @@ Framer Motion allows you to add interactivity through gestures like drag, hover,
 
 ### 1. Drag:
 
-`drag`: Enables dragging for the element.
-`dragConstraints`: Limits dragging to a specific range (top, bottom, left, right).
-`dragElastic`: Controls how "stretchy" the drag boundaries feel.
+- `drag`: Enables dragging for the element.
+- `dragConstraints`: Limits dragging to a specific range (top, bottom, left, right).
+- `dragElastic`: Controls how "stretchy" the drag boundaries feel.
 
 ### 2. Hover:
 
-`whileHover`: Applies the specified animation when the mouse hovers over the element.
+- `whileHover`: Applies the specified animation when the mouse hovers over the element.
 
 ### 3. Tap:
 
-`whileTap`: Applies the specified animation when the element is pressed/clicked.
+- `whileTap`: Applies the specified animation when the element is pressed/clicked.
