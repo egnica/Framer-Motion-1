@@ -90,76 +90,71 @@ Framer Motion allows you to add interactivity through gestures like drag, hover,
 
 - `whileTap`: Applies the specified animation when the element is pressed/clicked.
 
-### 3 dive with each Gesture:
+### 3 divs with each Gesture:
 
 ```js
-<div
+{
+  /* Drag Gesture */
+}
+<motion.div
+  drag
+  dragConstraints={{ top: -50, bottom: 50, left: -50, right: 50 }}
+  dragElastic={0.2}
+  whileDrag={{ scale: 1.2, backgroundColor: "#ff6961" }}
   style={{
+    backgroundColor: "lightblue",
+    width: 150,
+    height: 150,
+    borderRadius: 20,
     display: "flex",
-    justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
-    flexDirection: "column",
-    gap: "20px",
+    justifyContent: "center",
+    fontSize: "18px",
+    fontWeight: "bold",
+    cursor: "grab",
   }}
 >
-  {/* Drag Gesture */}
-  <motion.div
-    drag
-    dragConstraints={{ top: -50, bottom: 50, left: -50, right: 50 }}
-    dragElastic={0.2}
-    whileDrag={{ scale: 1.2, backgroundColor: "#ff6961" }}
-    style={{
-      backgroundColor: "lightblue",
-      width: 150,
-      height: 150,
-      borderRadius: 20,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "18px",
-      fontWeight: "bold",
-      cursor: "grab",
-    }}
-  >
-    Drag Me!
-  </motion.div>
+  Drag Me!
+</motion.div>;
 
-  {/* Hover Gesture */}
-  <motion.div
-    whileHover={{ scale: 1.1, rotate: 5, backgroundColor: "#77dd77" }}
-    style={{
-      backgroundColor: "lightcoral",
-      width: 150,
-      height: 150,
-      borderRadius: 20,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "18px",
-      fontWeight: "bold",
-    }}
-  >
-    Hover Me!
-  </motion.div>
+{
+  /* Hover Gesture */
+}
+<motion.div
+  whileHover={{ scale: 1.1, rotate: 5, backgroundColor: "#77dd77" }}
+  style={{
+    backgroundColor: "lightcoral",
+    width: 150,
+    height: 150,
+    borderRadius: 20,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "18px",
+    fontWeight: "bold",
+  }}
+>
+  Hover Me!
+</motion.div>;
 
-  {/* Tap Gesture */}
-  <motion.div
-    whileTap={{ scale: 0.9, rotate: -5, backgroundColor: "#fdfd96" }}
-    style={{
-      backgroundColor: "lightgreen",
-      width: 150,
-      height: 150,
-      borderRadius: 20,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: "18px",
-      fontWeight: "bold",
-      cursor: "pointer",
-    }}
-  >
-    Tap Me!
-  </motion.div>
-</div>
+{
+  /* Tap Gesture */
+}
+<motion.div
+  whileTap={{ scale: 0.9, rotate: -5, backgroundColor: "#fdfd96" }}
+  style={{
+    backgroundColor: "lightgreen",
+    width: 150,
+    height: 150,
+    borderRadius: 20,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "18px",
+    fontWeight: "bold",
+    cursor: "pointer",
+  }}
+>
+  Tap Me!
+</motion.div>;
 ```
