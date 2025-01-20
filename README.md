@@ -138,7 +138,7 @@ Framer Motion allows you to add interactivity through gestures like drag, hover,
 </motion.div>;
 
 {
-  /* Tap Gesture */
+  /* Tap Gesture 'click' */
 }
 <motion.div
   whileTap={{ scale: 0.9, rotate: -5, backgroundColor: "#fdfd96" }}
