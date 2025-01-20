@@ -165,11 +165,6 @@ The AnimatePresence component enables animations when components are added to or
 
 AnimatePresence is a wrapper component provided by Framer Motion. It enables animations for components as they are added to or removed from the DOM. Without it, Framer Motion can't animate components that are removed because they disappear from the DOM instantly.
 
-You're absolutely correct! AnimatePresence is a very straightforward and powerful feature in Framer Motion. Let’s break it down in detail to understand how it works and why it’s so useful.
-
-What is AnimatePresence?
-AnimatePresence is a wrapper component provided by Framer Motion. It enables animations for components as they are added to or removed from the DOM. Without it, Framer Motion can't animate components that are removed because they disappear from the DOM instantly.
-
 ### How Does It Work?
 
 1. Wrap the Conditional Element:
