@@ -17,7 +17,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.6, ease: "easeInOut" },
+      transition: { duration: 0.6, ease: "easeIn" },
     },
     hover: {
       scale: 1.2,

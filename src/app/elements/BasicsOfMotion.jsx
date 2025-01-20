@@ -4,6 +4,27 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const BasicsOfMotion = () => {
   const [visible, setVisible] = useState(false);
+
+  const boxVariant = {
+    hidden: {
+      opacity: 0,
+      rotate: "0deg",
+      scale: 0,
+    },
+    visible: {
+      opacity: 1,
+      rotate: "360deg",
+      scale: 1,
+      transition: { duration: 1, ease: "easeIn", type: "spring" },
+    },
+    finish: {
+      opacity: 0,
+      rotate: "0deg",
+      scale: 0,
+      transition: { duration: 2, ease: "easeOut", type: "spring" },
+    },
+  };
+
   return (
     <>
       <div>
@@ -31,22 +52,10 @@ const BasicsOfMotion = () => {
         <AnimatePresence mode="sync">
           {visible && (
             <motion.div
-              initial={{
-                rotate: "0deg",
-                scale: 0,
-              }}
-              animate={{
-                rotate: "180deg",
-                scale: 1,
-              }}
-              exit={{
-                rotate: "0deg",
-                scale: 0,
-              }}
-              transition={{
-                duration: 1,
-                ease: "backInOut",
-              }}
+              variants={boxVariant}
+              initial="hidden"
+              animate="visible"
+              exit="finish"
               style={{
                 width: 150,
                 height: 150,
