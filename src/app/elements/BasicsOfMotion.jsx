@@ -5,23 +5,42 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 const BasicsOfMotion = () => {
   const [visible, setVisible] = useState(false);
 
+  const btnVariant = {
+    start: {
+      opacity: 0,
+      scale: 0,
+    },
+    appear: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeIn" },
+    },
+    hover: {
+      scale: 1.1,
+    },
+    click: {
+      scale: 0.9,
+    },
+  };
+
   const boxVariant = {
     hidden: {
       opacity: 0,
       rotate: "0deg",
       scale: 0,
+      transition: {
+        duration: 1,
+        ease: "easeIn",
+      },
     },
     visible: {
       opacity: 1,
       rotate: "360deg",
       scale: 1,
-      transition: { duration: 1, ease: "easeIn", type: "spring" },
-    },
-    finish: {
-      opacity: 0,
-      rotate: "0deg",
-      scale: 0,
-      transition: { duration: 2, ease: "easeOut", type: "spring" },
+      transition: {
+        duration: 1,
+        ease: "easeIn",
+      },
     },
   };
 
@@ -31,9 +50,11 @@ const BasicsOfMotion = () => {
         <motion.button
           className="example-button"
           onClick={() => setVisible(!visible)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          layout
+          variants={btnVariant}
+          initial="start"
+          animate="appear"
+          whileHover="hover"
+          whileTap="click"
           style={{
             padding: "10px 20px",
             background: "gray",
@@ -55,7 +76,7 @@ const BasicsOfMotion = () => {
               variants={boxVariant}
               initial="hidden"
               animate="visible"
-              exit="finish"
+              exit="hidden"
               style={{
                 width: 150,
                 height: 150,
