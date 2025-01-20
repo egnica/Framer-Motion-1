@@ -6,14 +6,7 @@ const BasicsOfMotion = () => {
   const [visible, setVisible] = useState(false);
   return (
     <>
-      <div
-        style={{
-          display: "grid",
-          placeContent: "center",
-          gap: "0.8rem",
-          paddingTop: 20
-        }}
-      >
+      <div>
         <motion.button
           className="example-button"
           onClick={() => setVisible(!visible)}
@@ -32,6 +25,9 @@ const BasicsOfMotion = () => {
         >
           Show/Hide
         </motion.button>
+        <br />
+        <br />
+        <br />
         <AnimatePresence mode="sync">
           {visible && (
             <motion.div
