@@ -7,6 +7,7 @@ import Box from "./elements/Box-demo.jsx";
 import BasicsOfMotion from "./elements/BasicsOfMotion.jsx";
 import VariantObjects from "./elements/VariantObjects";
 import Gestures from "./elements/Gestures.jsx";
+import AnimatePre from "./elements/AnimatePre";
 
 export default function Home() {
   const ptagVariant = {
@@ -46,7 +47,12 @@ export default function Home() {
         <VariantObjects />
         <br />
         <Gestures />
+        <br />
+        <div style={{ minHeight: 150 }}>
+          <AnimatePre />
+        </div>
       </div>
+
       <div className={styles.page}></div>
     </>
   );

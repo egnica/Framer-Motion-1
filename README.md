@@ -158,3 +158,73 @@ Framer Motion allows you to add interactivity through gestures like drag, hover,
   Tap Me!
 </motion.div>;
 ```
+
+## AnimatePresence
+
+The AnimatePresence component enables animations when components are added to or removed from the DOM. It’s ideal for enter/exit animations for modals, notifications, and other dynamic UI elements.
+
+AnimatePresence is a wrapper component provided by Framer Motion. It enables animations for components as they are added to or removed from the DOM. Without it, Framer Motion can't animate components that are removed because they disappear from the DOM instantly.
+
+You're absolutely correct! AnimatePresence is a very straightforward and powerful feature in Framer Motion. Let’s break it down in detail to understand how it works and why it’s so useful.
+
+What is AnimatePresence?
+AnimatePresence is a wrapper component provided by Framer Motion. It enables animations for components as they are added to or removed from the DOM. Without it, Framer Motion can't animate components that are removed because they disappear from the DOM instantly.
+
+### How Does It Work?
+
+1. Wrap the Conditional Element:
+   - AnimatePresence observes its children.
+   - When children are conditionally rendered (isVisible && <motion.div>), it triggers the exit animation for elements leaving the DOM and ensures the initial and animate animations work when entering the DOM.
+2. Use Framer Motion Props:
+
+- Add initial, animate, and exit props to the motion component inside AnimatePresence.
+- These define how the component should behave when entering, updating, or exiting the DOM.
+
+#### Here is an example:
+
+```js
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function App() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <button
+        onClick={() => setIsVisible(!isVisible)}
+        style={{ padding: "10px 20px", fontSize: "16px" }}
+      >
+        Toggle
+      </button>
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              margin: "20px auto",
+              background: "lightblue",
+              width: "200px",
+              height: "100px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "10px",
+            }}
+          >
+            Hello, I’m animated!
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+```
+
+### AnimatePresence:
+
+- Wraps components that should have enter/exit animations.
+- Ensures the animation plays even when the component is removed from the DOM.
