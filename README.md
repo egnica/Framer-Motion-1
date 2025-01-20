@@ -226,3 +226,28 @@ export default function App() {
   - If `AnimatePresence` is not used, React immediately removes the component from the DOM, and the `exit` animation is never triggered.
 - Wraps components that should have enter/exit animations.
 - Ensures the animation plays even when the component is removed from the DOM.
+
+## Layout Animations
+
+1. What is layout?
+   The layout prop in Framer Motion is used to animate layout.
+   changes that result from updates to the size or position of elements already in the DOM. It handles:
+
+- Smooth transitions between different sizes, positions, or configurations of an element.
+- Changes in layout due to dynamic styles (e.g., width, height, margins).
+
+### Key Features of layout:
+
+- #### Works on elements already in the DOM.
+- Focused on changes in an element’s size or position.
+  Automatically detects layout changes and animates them smoothly.
+
+## Key Difference Between `layout` and `AnimatePresence`
+
+| Feature                  |                     layout                     |                                AnimatePresence |
+| :----------------------- | :--------------------------------------------: | ---------------------------------------------: |
+| Purpose                  |      Animate changes in size or position.      |   Animate elements as they enter/exit the DOM. |
+| Works On                 |          Elements already in the DOM.          |               Conditionally rendered elements. |
+| Handles Exit Animations? |                     False                      |                                           True |
+| Usage                    |   Resizing, repositioning, or layout shifts.   |              Animations for enter/exit states. |
+| Trigger                  | Layout/style changes (e.g., size or position). | Layout/style changes (e.g., size or position). |
