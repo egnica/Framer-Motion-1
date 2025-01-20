@@ -28,6 +28,7 @@ const BasicsOfMotion = () => {
       opacity: 0,
       rotate: "0deg",
       scale: 0,
+      height: 0,
       transition: {
         duration: 1,
         ease: "easeIn",
@@ -37,6 +38,7 @@ const BasicsOfMotion = () => {
       opacity: 1,
       rotate: "360deg",
       scale: 1,
+      height: 130,
       transition: {
         duration: 1,
         ease: "easeIn",
@@ -78,8 +80,8 @@ const BasicsOfMotion = () => {
               animate="visible"
               exit="hidden"
               style={{
-                width: 150,
-                height: 150,
+                width: 130,
+
                 background: "blue",
               }}
             >

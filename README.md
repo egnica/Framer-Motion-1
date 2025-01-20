@@ -8,7 +8,7 @@
 
 ### Let's take a look at this boxVariants Object
 
-### Object defined:
+#### Object defined:
 
 ```js
 const boxVariants = {
@@ -41,7 +41,7 @@ const boxVariants = {
    - The animate prop defines the target state (e.g., animate="visible" moves to the visible state).
    - Special props like whileHover let you specify animations for specific interactions (e.g., whileHover="hover" triggers the hover state).
 
-### div returned:
+#### div returned:
 
 ```js
 <motion.div
@@ -71,3 +71,21 @@ No, it only uses the transition of the target state (the state you're animating 
 
 - From hidden to visible: The transition defined in the visible state is used.
 - From visible to hidden: The transition defined in the hidden state is used.
+
+## Gestures with Framer Motion
+
+Framer Motion allows you to add interactivity through gestures like drag, hover, and tap. These are simple to implement and can make your components feel dynamic and engaging.
+
+### 1. Drag:
+
+`drag`: Enables dragging for the element.
+`dragConstraints`: Limits dragging to a specific range (top, bottom, left, right).
+`dragElastic`: Controls how "stretchy" the drag boundaries feel.
+
+### 2. Hover:
+
+`whileHover`: Applies the specified animation when the mouse hovers over the element.
+
+### 3. Tap:
+
+`whileTap`: Applies the specified animation when the element is pressed/clicked.
