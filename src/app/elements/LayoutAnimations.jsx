@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const LayoutAnimations = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isClicked, SetIsClicked] = useState(false);
   return (
     <>
       <motion.div
@@ -24,6 +25,31 @@ const LayoutAnimations = () => {
         }}
       >
         {isExpanded ? "Click to Shrink" : "Click to Expand"}
+      </motion.div>
+      <br />
+      <motion.div
+        onClick={() => {
+          SetIsClicked(!isClicked);
+        }}
+        layout
+        initial={{ opacity: 0, scale: 0 }} // Starting state
+        animate={{ opacity: 1, scale: 1 }} // Animated state
+        whileHover={{ scale: 1.1 }} // Adds interactivity
+        style={{
+          backgroundColor: "lightblue",
+          borderRadius: "10px",
+          padding: "20px",
+          width: isClicked ? "300px" : "150px", // Dynamic width
+          height: isClicked ? "200px" : "100px", // Dynamic height
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "18px",
+          fontWeight: "bold",
+          cursor: "pointer",
+        }}
+      >
+        {isClicked ? "Click to Shrink" : "Click to Expand"}
       </motion.div>
     </>
   );

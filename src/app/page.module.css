@@ -3,3 +3,12 @@
   place-content: center;
   padding: 5%;
 }
+.btn {
+  padding: "10px 20px";
+  background: "gray";
+  color: "white";
+  border: "none";
+  border-radius: "5px";
+  cursor: "pointer";
+  width: 150;
+}
