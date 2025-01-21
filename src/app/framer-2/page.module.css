@@ -12,6 +12,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 10;
 }
 .revealContainer {
   display: grid;
@@ -22,8 +23,12 @@
 }
 .revealContainer div {
   background-color: rgb(163, 163, 254);
+  color: aliceblue;
+  padding: 10px;
   border: 1px solid rgb(178, 178, 178);
   height: 150px;
   display: grid;
   place-content: center;
+  border-radius: 20px;
+  cursor: pointer;
 }

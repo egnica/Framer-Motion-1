@@ -5,6 +5,22 @@ import { motion, AnimatePresence, animate } from "framer-motion";
 import { useState } from "react";
 const page = () => {
   const [isHidden, setIsHidden] = useState(false);
+  const [isClicked, setIsClicked] = useState(null);
+
+  const infoObject = {
+    boxOne: {
+      text1: "Some Text is being displayed 1-a",
+      text2: "Some different text is being displayed 1-b",
+    },
+    boxTwo: {
+      text1: "Some Text is being displayed 2-a",
+      text2: "Some different text is being displayed 2-b",
+    },
+    boxThree: {
+      text1: "Some Text is being displayed 3-a",
+      text2: "Some different text is being displayed 3-b",
+    },
+  };
   const titleVariant = {
     start: {
       opacity: 0,
@@ -23,7 +39,6 @@ const page = () => {
     },
     visible: {
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeIn" },
     },
     hover: {
       scale: 1.1,
@@ -45,6 +60,21 @@ const page = () => {
       transition: { duration: 0.5, ease: "easeIn" },
     },
   };
+
+  const singleBoxVariant = {
+    start: { opacity: 0 },
+    hover: {
+      scale: 1.1,
+      rotate: "2deg",
+    },
+    click: {
+      scale: 0.9,
+      rotate: 0,
+    },
+    animate: {
+      rotateX: 180,
+    },
+  };
   return (
     <>
       <div className={styles.page}>
@@ -58,7 +88,10 @@ const page = () => {
           whileHover="hover"
           whileTap="click"
           className={styles.button}
-          onClick={() => setIsHidden(!isHidden)}
+          onClick={() => {
+            setIsHidden(!isHidden);
+            setIsClicked(null);
+          }}
         >
           Click Here
         </motion.div>
@@ -72,15 +105,46 @@ const page = () => {
             exit="start"
             className={styles.revealContainer}
           >
-            <motion.div>
-              <p>Test1</p>
-            </motion.div>
-            <motion.div>
-              <p>Test2</p>
-            </motion.div>
-            <motion.div>
-              <p>Test3</p>
-            </motion.div>
+            {Object.values(infoObject).map((values, index) => {
+              return (
+                <motion.div
+                  layout
+                  key={index}
+                  variants={singleBoxVariant}
+                  initial
+                  animate={{
+                    rotateY: isClicked == index ? 180 : 0,
+                    backgroundColor:
+                      isClicked == index
+                        ? "rgb(61, 61, 250)"
+                        : "rgb(163, 163, 254)",
+                    cursor: isHidden ? "pointer" : "arrow",
+                  }}
+                  whileHover="hover"
+                  whileTap="click"
+                  onClick={() => {
+                    isClicked == index
+                      ? setIsClicked(null)
+                      : setIsClicked(index);
+                  }}
+                >
+                  {isClicked == null ? (
+                    <p>{values.text1}</p>
+                  ) : isClicked == index ? (
+                    <motion.p
+                      layout
+                      animate={{
+                        rotateY: isClicked == index ? 180 : 0,
+                      }}
+                    >
+                      {values.text2}
+                    </motion.p>
+                  ) : (
+                    <p>{values.text1}</p>
+                  )}
+                </motion.div>
+              );
+            })}
           </motion.div>
         )}
       </AnimatePresence>
