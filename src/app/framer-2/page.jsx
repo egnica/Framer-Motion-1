@@ -42,6 +42,7 @@ const page = () => {
     },
     hover: {
       scale: 1.1,
+      backgroundColor: "rgb(109, 109, 252)",
     },
     click: {
       scale: 0.9,
@@ -66,6 +67,7 @@ const page = () => {
     hover: {
       scale: 1.1,
       rotate: "2deg",
+      backgroundColor: "rgb(109, 109, 252)",
     },
     click: {
       scale: 0.9,
@@ -148,6 +150,10 @@ const page = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      <br />
+      <motion.h1 variants={titleVariant} initial="start" animate="visible">
+        This Text Below
+      </motion.h1>
     </>
   );
 };
