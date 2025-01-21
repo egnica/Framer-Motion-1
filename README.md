@@ -251,3 +251,7 @@ export default function App() {
 | Handles Exit Animations? |                     False                      |                      True                      |
 | Usage                    |   Resizing, repositioning, or layout shifts.   |       Animations for enter/exit states.        |
 | Trigger                  | Layout/style changes (e.g., size or position). | Layout/style changes (e.g., size or position). |
+
+## Note:
+
+- Finding with so many dom elements moving in and out, giving buttons a z-index seems to fix a lot of click issues i was seeming to run into.
