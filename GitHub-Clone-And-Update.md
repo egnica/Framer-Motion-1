@@ -54,6 +54,29 @@ Lets say you are working on multiple machines. I want to make sure I can clone a
 2. Pull the latest changes:
    `git pull origin main`
 
+
+## Update Another Local Directory with the Changes. **_If the Repository Connection is Already Made_** (Make sure local file is up to date)
+
+### Step 1. Verify Existing Remote:
+
+`git remote -v`
+
+### Step 2. Update Remote (if needed): If the current remote is incorrect or needs to be changed:
+
+`git remote set-url origin <repo_url>`
+
+### Step 3. Fetch Updates from the Remote:
+
+`git fetch origin`
+
+### Step 4. Merge Updates into Your Local Branch:
+
+`git merge origin/main` (Replace main with your branch name if different.)
+
+### Step 5. Alternatively, Use git pull to Fetch and Merge in One Step:
+
+`git pull origin main`   
+
 ## Summary of Commands
 
 ### Clone a repository
@@ -82,24 +105,3 @@ git checkout <branch_name>
 git pull origin <branch_name>
 ```
 
-## Update Another Local Directory with the Changes. **_If the Repository Connection is Already Made_** (Make sure local file is up to date)
-
-### Step 1. Verify Existing Remote:
-
-`git remote -v`
-
-### Step 2. Update Remote (if needed): If the current remote is incorrect or needs to be changed:
-
-`git remote set-url origin <repo_url>`
-
-### Step 3. Fetch Updates from the Remote:
-
-`git fetch origin`
-
-### Step 4. Merge Updates into Your Local Branch:
-
-`git merge origin/main` (Replace main with your branch name if different.)
-
-### Step 5. Alternatively, Use git pull to Fetch and Merge in One Step:
-
-`git pull origin main`
