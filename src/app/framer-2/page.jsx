@@ -10,7 +10,8 @@ const page = () => {
   const infoObject = {
     boxOne: {
       text1: "Some Text is being displayed 1-a",
-      text2: "Some different text is being displayed 1-b",
+      text2:
+        "Some different text is being displayed 1-b. Adding more for a test",
     },
     boxTwo: {
       text1: "Some Text is being displayed 2-a",
