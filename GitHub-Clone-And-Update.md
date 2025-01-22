@@ -54,7 +54,6 @@ Lets say you are working on multiple machines. I want to make sure I can clone a
 2. Pull the latest changes:
    `git pull origin main`
 
-
 ## Update Another Local Directory with the Changes. **_If the Repository Connection is Already Made_** (Make sure local file is up to date)
 
 ### Step 1. Verify Existing Remote:
@@ -75,33 +74,53 @@ Lets say you are working on multiple machines. I want to make sure I can clone a
 
 ### Step 5. Alternatively, Use git pull to Fetch and Merge in One Step:
 
-`git pull origin main`   
+`git pull origin main`
 
-## Summary of Commands
+# TL;DR Summary of Commands
 
 ### Clone a repository
 
+Use these commands when you want to clone a repository and start working on it locally for the first time:
+
 ```bash
+# Navigate to the desired folder
+cd /path/to/your/desired/location
+
+# Clone the repository
 git clone <repo_url>
+
+# Move into the cloned repository folder
 cd <repo_name>
 ```
 
-### Make and commit changes
+### Pull Changes and Update Local Files (No Existing Connection to Repo)
 
 ```bash
-git status
-git add <file_name>
-git commit -m "Describe changes"
-git push origin <branch_name>
+# Navigate to the local folder with your files
+cd /path/to/your/local/folder
+
+# Initialize Git in this folder
+git init
+
+# Add the remote repository connection
+git remote add origin <repo_url>
+
+# Pull the latest changes from the repository
+git pull origin main
 ```
 
-### Sync changes to another directory - If remote is not set
+### Update Files Where Connection to Repo Already Exists
 
 ```bash
-cd /path/to/original/directory
-git init # (if not already a git repo)
-git remote add origin <repo_url> # (if remote is not set)
-git checkout <branch_name>
-git pull origin <branch_name>
-```
+# Navigate to the local folder
+cd /path/to/your/local/folder
 
+# Fetch changes from the remote repository
+git fetch origin
+
+# Merge changes into your current branch
+git merge origin/main
+
+# Alternatively, use git pull to fetch and merge in one step
+git pull origin main
+```
