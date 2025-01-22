@@ -18,6 +18,8 @@ Lets say you are working on multiple machines. I want to make sure I can clone a
 4. Move into the newly cloned directory:
    `cd [your-file]`(on your machine)
 
+   ** Note: To download dependencies: `npm install`**
+
 ### Step 2: Make Changes to the Code
 
 1. Open the project in VS Code.
@@ -92,6 +94,8 @@ git clone <repo_url>
 # Move into the cloned repository folder
 cd <repo_name>
 ```
+
+** Note: To download dependencies: `npm install`**
 
 ### Pull Changes and Update Local Files (No Existing Connection to Repo)
 
