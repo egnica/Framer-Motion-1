@@ -56,14 +56,14 @@ Lets say you are working on multiple machines. I want to make sure I can clone a
 
 ## Summary of Commands
 
-# Clone a repository
+### Clone a repository
 
 ```bash
 git clone <repo_url>
 cd <repo_name>
 ```
 
-# Make and commit changes
+### Make and commit changes
 
 ```bash
 git status
@@ -72,7 +72,7 @@ git commit -m "Describe changes"
 git push origin <branch_name>
 ```
 
-# Sync changes to another directory
+### Sync changes to another directory - If remote is not set
 
 ```bash
 cd /path/to/original/directory
