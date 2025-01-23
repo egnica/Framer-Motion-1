@@ -15,7 +15,7 @@ const page = () => {
     },
     boxTwo: {
       text1: "Some Text is being displayed 2-a",
-      text2: "Some different text is being displayed 2-b",
+      text2: "Some different text is being displayed 2-b, A little more text",
     },
     boxThree: {
       text1: "Some Text is being displayed 3-a",
