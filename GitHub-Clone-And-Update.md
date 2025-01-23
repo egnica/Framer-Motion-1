@@ -1,4 +1,4 @@
-# Complete Git Workflow for GitHub
+# My Git Workflow for GitHub
 
 ### Scenario:
 
