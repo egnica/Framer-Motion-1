@@ -78,57 +78,6 @@ Lets say you are working on multiple machines. I want to make sure I can clone a
 
 `git pull origin main`
 
-# TL;DR Summary of Commands
-
-### Clone a repository
-
-Use these commands when you want to clone a repository and start working on it locally for the first time:
-
-```bash
-# Navigate to the desired folder
-cd /path/to/your/desired/location
-
-# Clone the repository
-git clone <repo_url>
-
-# Move into the cloned repository folder
-cd <repo_name>
-```
-
-** Note: To download dependencies: `npm install`**
-
-### Pull Changes and Update Local Files (No Existing Connection to Repo)
-
-```bash
-# Navigate to the local folder with your files
-cd /path/to/your/local/folder
-
-# Initialize Git in this folder
-git init
-
-# Add the remote repository connection
-git remote add origin <repo_url>
-
-# Pull the latest changes from the repository
-git pull origin main
-```
-
-### Update Files Where Connection to Repo Already Exists
-
-```bash
-# Navigate to the local folder
-cd /path/to/your/local/folder
-
-# Fetch changes from the remote repository
-git fetch origin
-
-# Merge changes into your current branch
-git merge origin/main
-
-# Alternatively, use git pull to fetch and merge in one step
-git pull origin main
-```
-
 ## Save changes to a branch other than the main branch
 
 ### Step 1: Check the Current Branch
@@ -214,5 +163,95 @@ git branch
 
 ```bash
 git checkout main
+git merge feature-branch
+```
+
+# TL;DR Summary of Commands
+
+### Clone a repository
+
+Use these commands when you want to clone a repository and start working on it locally for the first time:
+
+```bash
+# Navigate to the desired folder
+cd /path/to/your/desired/location
+
+# Clone the repository
+git clone <repo_url>
+
+# Move into the cloned repository folder
+cd <repo_name>
+```
+
+** Note: To download dependencies: `npm install`**
+
+### Pull Changes and Update Local Files (No Existing Connection to Repo)
+
+```bash
+# Navigate to the local folder with your files
+cd /path/to/your/local/folder
+
+# Initialize Git in this folder
+git init
+
+# Add the remote repository connection
+git remote add origin <repo_url>
+
+# Pull the latest changes from the repository
+git pull origin main
+```
+
+### Update Files Where Connection to Repo Already Exists
+
+```bash
+# Navigate to the local folder
+cd /path/to/your/local/folder
+
+# Fetch changes from the remote repository
+git fetch origin
+
+# Merge changes into your current branch
+git merge origin/main
+
+# Alternatively, use git pull to fetch and merge in one step
+git pull origin main
+```
+
+### Save Changes to a Different Branch
+
+Creating and Working on a New Branch
+
+```bash
+# Create a new branch and switch to it
+git checkout -b feature-branch
+
+# Check the current branch
+git branch
+
+# Make changes, then stage and commit them
+git add .
+git commit -m "Describe your changes"
+
+# Push the new branch to GitHub
+git push origin feature-branch
+```
+
+Switching Between Branches
+
+```bash
+# Switch to an existing branch
+git checkout branch-name
+
+# List all branches
+git branch
+```
+
+Merging Branches
+
+```bash
+# Switch to the main branch
+git checkout main
+
+# Merge another branch into main
 git merge feature-branch
 ```
