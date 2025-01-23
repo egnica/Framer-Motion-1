@@ -128,3 +128,91 @@ git merge origin/main
 # Alternatively, use git pull to fetch and merge in one step
 git pull origin main
 ```
+
+## Save changes to a branch other than the main branch
+
+### Step 1: Check the Current Branch
+
+1. Run the following command to see which branch you're on:
+
+```bash
+git branch
+```
+
+### Step 2: Create a New Branch
+
+1. Create a new branch (e.g., feature-branch):
+
+```bash
+git branch feature-branch
+```
+
+2. Switch to the new branch:
+
+```bash
+git checkout feature-branch
+```
+
+Or create and switch in one step:
+
+```bash
+git checkout -b feature-branch
+```
+
+### Step 3: Make Your Changes
+
+1. Edit your files as needed.
+2. Stage the changes:
+
+```bash
+git add .
+```
+
+3. Commit the changes:
+
+```bash
+git commit -m "Describe your changes"
+```
+
+### Step 4: Push the New Branch to GitHub
+
+1. Push the branch to the remote repository:
+
+```bash
+git push origin feature-branch
+```
+
+### Switching Between Branches
+
+1. To switch back to the main branch:
+
+```bash
+git checkout main
+```
+
+2. To switch back to your feature branch:
+
+```bash
+git checkout feature-branch
+```
+
+### Common Commands for Branch Management
+
+- List all branches:
+
+```bash
+git branch -d branch-name
+```
+
+- Delete a branch locally:
+
+```bash
+git branch
+```
+
+- Merge a branch into main:
+
+```bash
+git checkout main
+git merge feature-branch
+```
